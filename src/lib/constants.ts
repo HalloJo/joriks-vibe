@@ -91,11 +91,11 @@ export const projects = [
     link: "https://palet-sigma.vercel.app/",
   },
   {
-    name: "Ocean Sewage Alliance",
+    name: "Covrd",
     description:
-      "Award-nominated website for an environmental NGO. Vue.js, Nuxt, GSAP animations.",
-    tags: ["Vue.js", "Nuxt", "GSAP", "TypeScript"],
-    link: "https://www.oceansewagealliance.org",
+      "Paste a job description and your CV — Covrd writes a tailored cover letter and shows what you're missing.",
+    tags: ["Next.js", "AI", "Vibe", "TypeScript", "Tailwind"],
+    link: "https://covrd-chi.vercel.app/",
   },
   {
     name: "iprox",

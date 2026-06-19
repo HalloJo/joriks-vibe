@@ -13,7 +13,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-12"
         >
-          Selected Work
+          Vibed Work
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
