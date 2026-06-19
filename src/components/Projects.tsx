@@ -42,7 +42,7 @@ export default function Projects() {
               }}
               className="group relative flex flex-col gap-4 p-6 rounded-2xl
                          bg-white/2.5 backdrop-blur-sm
-                         border border-white/[0.07]
+                         border border-white/25
                          hover:border-accent/40
                          hover:bg-white/4
                          hover:shadow-[0_0_40px_rgba(255,107,43,0.08),0_8px_32px_rgba(0,0,0,0.4)]
@@ -50,7 +50,7 @@ export default function Projects() {
             >
               <ExternalLink
                 size={14}
-                className="absolute top-5 right-5 text-[#f0f0f0]/15 group-hover:text-accent/60 transition-colors duration-200"
+                className="absolute top-5 right-5 text-[#f0f0f0]/35 group-hover:text-accent/60 transition-colors duration-200"
               />
 
               <h3 className="text-base font-semibold text-[#f0f0f0]/90 group-hover:text-accent transition-colors duration-200 pr-6">
