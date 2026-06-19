@@ -1,6 +1,44 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, Instagram, ArrowDown } from "lucide-react";
 import BehanceIcon from "./icons/BehanceIcon";
+
+const VIBE_CODED_AT = new Date("2026-06-19T00:00:00");
+
+function formatElapsed(ms: number): string {
+  if (ms < 0) return "just now";
+  const seconds = Math.floor(ms / 1000);
+  if (seconds < 60) return "just now";
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days < 35) {
+    const weeks = Math.floor(days / 7);
+    return weeks < 2 ? `${days} day${days !== 1 ? "s" : ""} ago` : `${weeks} weeks ago`;
+  }
+  const months = Math.floor(days / 30.44);
+  if (months < 12) return `${months} month${months !== 1 ? "s" : ""} ago`;
+  const years = Math.floor(days / 365.25);
+  const remainingMonths = Math.floor((days % 365.25) / 30.44);
+  if (remainingMonths === 0) return `${years} year${years !== 1 ? "s" : ""} ago`;
+  return `${years}yr ${remainingMonths}mo ago`;
+}
+
+function useVibeAge() {
+  const [label, setLabel] = useState(() =>
+    formatElapsed(Date.now() - VIBE_CODED_AT.getTime())
+  );
+  useEffect(() => {
+    const id = setInterval(
+      () => setLabel(formatElapsed(Date.now() - VIBE_CODED_AT.getTime())),
+      1000
+    );
+    return () => clearInterval(id);
+  }, []);
+  return label;
+}
 
 const socials = [
   {
@@ -47,6 +85,8 @@ const photoVariants = {
 };
 
 export default function Hero() {
+  const vibeAge = useVibeAge();
+
   return (
     <section
       id="hero"
@@ -62,9 +102,11 @@ export default function Hero() {
         >
           <motion.p
             variants={itemVariants}
-            className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-5"
+            className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-5 flex items-center gap-3"
           >
             Portfolio
+            <span className="text-[#f0f0f0]/30 normal-case tracking-normal">·</span>
+            <span className="text-[#f0f0f0]/30 normal-case tracking-normal">vibe-coded {vibeAge}</span>
           </motion.p>
 
           <motion.h1
