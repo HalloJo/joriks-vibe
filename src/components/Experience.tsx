@@ -1,19 +1,17 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { experiences } from "../lib/constants";
 
 export default function Experience() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
-  const newLocal =
+  const timelineClass =
     "absolute left-0 top-0 bottom-0 w-px bg-linear-to-b from-accent/60 via-[#FF6B2B]/20 to-transparent";
+
   return (
-    <section id="experience" ref={ref} className="py-24 md:py-32 px-6">
+    <section id="experience" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-12"
         >
@@ -24,14 +22,11 @@ export default function Experience() {
           {/* Animated timeline line */}
           <motion.div
             initial={{ scaleY: 0 }}
-            animate={isInView ? { scaleY: 1 } : {}}
-            transition={{
-              duration: 1.4,
-              ease: [0.25, 0.1, 0.25, 1],
-              delay: 0.2,
-            }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
             style={{ originY: 0 }}
-            className={newLocal}
+            className={timelineClass}
           />
 
           <div className="space-y-12">
@@ -39,10 +34,11 @@ export default function Experience() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -16 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.6,
-                  delay: 0.3 + i * 0.14,
+                  delay: i * 0.1,
                   ease: "easeOut",
                 }}
                 className="relative"
@@ -50,11 +46,7 @@ export default function Experience() {
                 {/* Pulsing dot */}
                 <div className="absolute -left-6 md:-left-8 top-1.5 -translate-x-1/2">
                   <motion.div
-                    animate={
-                      isInView
-                        ? { scale: [1, 1.45, 1], opacity: [1, 0.55, 1] }
-                        : {}
-                    }
+                    animate={{ scale: [1, 1.45, 1], opacity: [1, 0.55, 1] }}
                     transition={{
                       duration: 2.4,
                       repeat: Infinity,

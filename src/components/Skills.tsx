@@ -1,17 +1,14 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { primarySkills, secondarySkills } from "../lib/constants";
 
 export default function Skills() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="skills" ref={ref} className="py-24 md:py-32 px-6">
+    <section id="skills" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-10"
         >
@@ -23,7 +20,8 @@ export default function Skills() {
           <div>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-xs font-mono text-[#f0f0f0]/50 tracking-widest uppercase mb-4"
             >
@@ -34,10 +32,11 @@ export default function Skills() {
                 <motion.span
                   key={skill}
                   initial={{ opacity: 0, y: 10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{
                     duration: 0.4,
-                    delay: 0.15 + i * 0.045,
+                    delay: i * 0.045,
                     ease: "easeOut",
                   }}
                   className="px-3.5 py-1.5 text-sm font-medium
@@ -56,8 +55,9 @@ export default function Skills() {
           <div>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.55 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="text-xs font-mono text-[#f0f0f0]/50 tracking-widest uppercase mb-4"
             >
               Also comfortable with
@@ -67,10 +67,11 @@ export default function Skills() {
                 <motion.span
                   key={skill}
                   initial={{ opacity: 0, y: 10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{
                     duration: 0.4,
-                    delay: 0.6 + i * 0.05,
+                    delay: i * 0.05,
                     ease: "easeOut",
                   }}
                   className="px-3.5 py-1.5 text-sm font-medium

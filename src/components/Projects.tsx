@@ -1,20 +1,17 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { projects } from '../lib/constants';
 
 export default function Projects() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
-
   return (
-    <section id="projects" ref={ref} className="py-24 md:py-32 px-6">
+    <section id="projects" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-mono text-[#FF6B2B] tracking-[0.25em] uppercase mb-12"
+          className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-12"
         >
           Selected Work
         </motion.p>
@@ -27,7 +24,8 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 28 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               whileHover={{ scale: 1.02, y: -2 }}
               transition={{
                 opacity: { duration: 0.65, delay: i * 0.13, ease: [0.25, 0.1, 0.25, 1] },
