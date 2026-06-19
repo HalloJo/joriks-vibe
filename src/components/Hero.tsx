@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Linkedin, Github, Instagram, ArrowDown } from "lucide-react";
 import BehanceIcon from "./icons/BehanceIcon";
 
@@ -90,11 +90,40 @@ const photoVariants = {
 export default function Hero() {
   const vibeAge = useVibeAge();
 
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
+  const springX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 80, damping: 20 });
+  const highlight = useTransform(
+    [springX, springY],
+    ([x, y]: number[]) =>
+      `radial-gradient(ellipse 55% 65% at ${x * 100}% ${
+        y * 100
+      }%, rgba(255, 107, 43, 0.442) 0%, rgba(255,107,43,0.07) 50%, transparent 80%)`
+  );
+
+  function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
+  }
+
+  function handleMouseLeave() {
+    mouseX.set(0.5);
+    mouseY.set(0.5);
+  }
+
   return (
     <section
       id="hero"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative min-h-screen flex items-center pt-16"
     >
+      <motion.div
+        style={{ background: highlight }}
+        className="absolute inset-0 pointer-events-none"
+      />
       <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-20 items-center py-14">
         {/* Left: Text */}
         <motion.div
