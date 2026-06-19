@@ -69,7 +69,7 @@ export default function Skills() {
               transition={{ duration: 0.5 }}
               className="text-xs font-mono text-[#f0f0f0]/50 tracking-widest uppercase mb-4"
             >
-              Also comfortable with
+              Also familiar with
             </motion.p>
             <motion.div
               variants={container}

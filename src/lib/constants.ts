@@ -8,12 +8,15 @@ export const primarySkills = [
   "Framer Motion",
   "GSAP",
   "Figma",
-  "HTML / CSS",
+  "HTML5 / CSS3",
   "Git",
   "Webdesign",
   "Illustration",
   "Branding",
   "Adobe Suite",
+  "Affinity",
+  "WordPress",
+  "Elementor",
 ];
 
 export const secondarySkills = [
