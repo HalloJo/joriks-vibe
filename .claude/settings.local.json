@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(npm run *)",
+      "Bash(git -C /Users/jorikvanruiswijk/portfolio status)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

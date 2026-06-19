@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/jorikvanruiswijk/portfolio add .gitignore)",
+      "Bash(git -C /Users/jorikvanruiswijk/portfolio branch -m main)"
+    ]
+  }
+}
