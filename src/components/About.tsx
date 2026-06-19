@@ -1,15 +1,15 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const paragraphs = [
-  "33 years old. Based in the Netherlands. I'm a self-taught front-end developer with a background in graphic design and illustration.",
+  "35 years old. Based in the Netherlands. Father of 3. I'm a self-taught front-end developer with a background in graphic design and illustration.",
   "Currently CTO at Marketing for a Day, where I lead the technical vision and build things that are both beautiful and functional.",
-  "I care deeply about details, animations, and experiences that feel alive.",
+  "I care deeply about details, animations, and experiences that are calm or fancy.",
 ];
 
 export default function About() {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section id="about" ref={ref} className="py-24 md:py-32 px-6">
@@ -18,7 +18,7 @@ export default function About() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-xs font-mono text-[#FF6B2B] tracking-[0.25em] uppercase mb-10"
+          className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-10"
         >
           About
         </motion.p>
