@@ -85,23 +85,23 @@ export const brands = [
 
 export const projects = [
   {
-    name: "Palet",
+    name: "Palet 🎨",
     description: "App to turn your idea into a brand identity — instantly.",
     tags: ["TypeScript", "React", "Tailwind", "AI", "Vibe"],
     link: "https://palet-sigma.vercel.app/",
   },
   {
-    name: "Covrd",
+    name: "Covrd 📄",
     description:
       "Paste a job description and your CV — Covrd writes a tailored cover letter and shows what you're missing.",
     tags: ["Next.js", "AI", "Vibe", "TypeScript", "Tailwind"],
     link: "https://covrd-chi.vercel.app/",
   },
   {
-    name: "iprox",
+    name: "Torched 🔥",
     description:
-      "Full redesign and development of a government software platform. Next.js, Strapi CMS, Tailwind.",
-    tags: ["Next.js", "Strapi", "Tailwind", "TypeScript"],
+      "Paste a website. We fetch it, read it, and roast it. No mercy. No fluff. Just what's wrong with it.",
+    tags: ["Vibe", "AI", "Tailwind", "TypeScript", "Next.js"],
     link: "https://www.iprox.nl",
   },
 ];

@@ -57,7 +57,7 @@ export default function Projects() {
                 {project.name}
               </h3>
 
-              <p className="text-sm text-[#f0f0f0]/45 leading-[1.7] flex-1">
+              <p className="text-sm text-[#f0f0f0]/55 leading-[1.7] flex-1">
                 {project.description}
               </p>
 
@@ -65,7 +65,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 text-[#f0f0f0]/35 tracking-wide"
+                    className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-[#f0f0f0]/60 tracking-wide"
                   >
                     {tag}
                   </span>
