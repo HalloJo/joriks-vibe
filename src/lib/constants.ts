@@ -102,7 +102,7 @@ export const projects = [
     description:
       "Paste a website. We fetch it, read it, and roast it. No mercy. No fluff. Just what's wrong with it.",
     tags: ["Vibe", "AI", "Tailwind", "TypeScript", "Next.js"],
-    link: "https://www.iprox.nl",
+    link: "https://torched-ashy.vercel.app/",
   },
 ];
 
