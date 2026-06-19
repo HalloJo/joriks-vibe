@@ -11,8 +11,20 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-        {/* Left: text */}
-        <div>
+
+        {/* Left: illustration */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+          className="hidden md:block md:order-1"
+        >
+          <AboutIllustration />
+        </motion.div>
+
+        {/* Right: text */}
+        <div className="md:order-2">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,25 +55,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right: illustration */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.15,
-          }}
-          className="hidden md:block"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <AboutIllustration />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
