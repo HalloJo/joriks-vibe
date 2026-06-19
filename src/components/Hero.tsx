@@ -52,12 +52,12 @@ const socials = [
   { name: "GitHub", href: "https://github.com/HalloJo", Icon: Github },
   {
     name: "Instagram",
-    href: "https://instagram.com/jorikvanruiswijk",
+    href: "https://instagram.com/jorik.tsx",
     Icon: Instagram,
   },
   {
     name: "Behance",
-    href: "https://behance.net/jorikvanruiswijk",
+    href: "https://www.behance.net/HiJorikVanRuiswijk",
     Icon: BehanceIcon,
   },
 ] as const;

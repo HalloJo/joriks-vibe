@@ -1,17 +1,29 @@
-import { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Linkedin, Github, Instagram, Mail, Phone } from 'lucide-react';
-import BehanceIcon from './icons/BehanceIcon';
-
-const socials = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/jorikvanruiswijk', Icon: Linkedin },
-  { name: 'GitHub', href: 'https://github.com/HalloJo', Icon: Github },
-  { name: 'Instagram', href: 'https://instagram.com/jorikvanruiswijk', Icon: Instagram },
-  { name: 'Behance', href: 'https://behance.net/jorikvanruiswijk', Icon: BehanceIcon },
-] as const;
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Linkedin, Github, Instagram, Mail, Phone } from "lucide-react";
+import BehanceIcon from "./icons/BehanceIcon";
 
 export default function Contact() {
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const socials = [
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/jorikvanruiswijk",
+      Icon: Linkedin,
+    },
+    { name: "GitHub", href: "https://github.com/HalloJo", Icon: Github },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/jorik.tsx",
+      Icon: Instagram,
+    },
+    {
+      name: "Behance",
+      href: "https://www.behance.net/HiJorikVanRuiswijk",
+      Icon: BehanceIcon,
+    },
+  ] as const;
 
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -21,7 +33,9 @@ export default function Contact() {
   const highlight = useTransform(
     [springX, springY],
     ([x, y]: number[]) =>
-      `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255,120,55,0.55) 0%, rgba(255,107,43,0.2) 38%, transparent 65%)`
+      `radial-gradient(circle at ${x * 100}% ${
+        y * 100
+      }%, rgba(255,120,55,0.55) 0%, rgba(255,107,43,0.2) 38%, transparent 65%)`
   );
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -71,7 +85,8 @@ export default function Contact() {
             </h2>
 
             <p className="text-base text-white/50 mb-12 max-w-md leading-relaxed">
-              Open for freelance projects, collaborations, and interesting conversations.
+              Open for freelance projects, collaborations, and interesting
+              conversations.
             </p>
 
             <div className="space-y-4 mb-12">

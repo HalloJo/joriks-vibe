@@ -114,17 +114,17 @@ export const socialLinks = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/jorikvanruiswijk",
+    href: "https://github.com/HalloJo",
     icon: "github",
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/jorikvanruiswijk",
+    href: "https://instagram.com/jorik.tsx",
     icon: "instagram",
   },
   {
     name: "Behance",
-    href: "https://behance.net/jorikvanruiswijk",
+    href: "https://www.behance.net/HiJorikVanRuiswijk",
     icon: "behance",
   },
 ] as const;
