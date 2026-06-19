@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Linkedin, Github, Instagram, ArrowDown } from "lucide-react";
 import BehanceIcon from "./icons/BehanceIcon";
 
-const VIBE_CODED_AT = new Date("2026-06-19T00:00:00");
+const VIBE_CODED_AT = new Date("2026-06-19T10:05:06+02:00");
 
 function formatElapsed(ms: number): string {
   if (ms < 0) return "just now";
@@ -16,13 +16,16 @@ function formatElapsed(ms: number): string {
   const days = Math.floor(hours / 24);
   if (days < 35) {
     const weeks = Math.floor(days / 7);
-    return weeks < 2 ? `${days} day${days !== 1 ? "s" : ""} ago` : `${weeks} weeks ago`;
+    return weeks < 2
+      ? `${days} day${days !== 1 ? "s" : ""} ago`
+      : `${weeks} weeks ago`;
   }
   const months = Math.floor(days / 30.44);
   if (months < 12) return `${months} month${months !== 1 ? "s" : ""} ago`;
   const years = Math.floor(days / 365.25);
   const remainingMonths = Math.floor((days % 365.25) / 30.44);
-  if (remainingMonths === 0) return `${years} year${years !== 1 ? "s" : ""} ago`;
+  if (remainingMonths === 0)
+    return `${years} year${years !== 1 ? "s" : ""} ago`;
   return `${years}yr ${remainingMonths}mo ago`;
 }
 
@@ -46,7 +49,7 @@ const socials = [
     href: "https://linkedin.com/in/jorikvanruiswijk",
     Icon: Linkedin,
   },
-  { name: "GitHub", href: "https://github.com/jorikvanruiswijk", Icon: Github },
+  { name: "GitHub", href: "https://github.com/HalloJo", Icon: Github },
   {
     name: "Instagram",
     href: "https://instagram.com/jorikvanruiswijk",
@@ -105,8 +108,12 @@ export default function Hero() {
             className="text-xs font-mono text-accent tracking-[0.25em] uppercase mb-5 flex items-center gap-3"
           >
             Portfolio
-            <span className="text-[#f0f0f0]/30 normal-case tracking-normal">·</span>
-            <span className="text-[#f0f0f0]/30 normal-case tracking-normal">vibe-coded {vibeAge}</span>
+            <span className="text-[#f0f0f0]/50 normal-case tracking-normal">
+              ·
+            </span>
+            <span className="text-[#f0f0f0]/50 normal-case tracking-normal">
+              Vibe-coded {vibeAge}
+            </span>
           </motion.p>
 
           <motion.h1
