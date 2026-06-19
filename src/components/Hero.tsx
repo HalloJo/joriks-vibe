@@ -95,7 +95,7 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center pt-16"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-20 items-center py-24">
+      <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-20 items-center py-14">
         {/* Left: Text */}
         <motion.div
           variants={containerVariants}
@@ -169,7 +169,7 @@ export default function Hero() {
               initial={{ rotate: -2 }}
               whileHover={{ rotate: 0, scale: 1.025 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative w-56 sm:w-64 md:w-72 rounded-2xl overflow-hidden
+              className="relative w-64 sm:w-64 md:w-72 rounded-2xl overflow-hidden
                          shadow-[0_20px_60px_rgba(0,0,0,0.7)]
                          border-2 border-white/10
                          hover:border-accent/50
