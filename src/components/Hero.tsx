@@ -174,7 +174,7 @@ export default function Hero() {
                          border-2 border-white/10
                          hover:border-accent/50
                          hover:shadow-[0_20px_60px_rgba(0,0,0,0.7),0_0_40px_rgba(255,107,43,0.25)]
-                         transition-all duration-500 cursor-pointer"
+                         transition-[border-color,box-shadow] duration-300 cursor-pointer"
             >
               {/* Card background */}
               <div className="absolute inset-0 bg-linear-to-b from-[#111827] to-[#0d1117]" />
@@ -182,7 +182,7 @@ export default function Hero() {
               {/* Top strip — retro sticker header */}
               <div className="relative z-10 bg-accent px-4 py-1.75 text-center">
                 <span className="text-[9px] font-mono font-bold tracking-[0.3em] text-black uppercase">
-                  Netherlands · NL
+                  Just started vibe-coding
                 </span>
               </div>
 
@@ -200,10 +200,10 @@ export default function Hero() {
               {/* Bottom strip — name plate */}
               <div className="relative z-10 px-4 py-3 text-center border-t border-white/8">
                 <p className="text-[10px] font-mono font-bold tracking-[0.2em] text-accent uppercase">
-                  Jorik van Ruiswijk
+                  Millenial
                 </p>
-                <p className="text-[9px] text-white/35 font-mono mt-0.5 tracking-widest">
-                  CTO · Design · Dev
+                <p className="text-[9px] text-white/50 font-mono mt-0.5 tracking-widest">
+                  Mixing retro with modern
                 </p>
               </div>
             </motion.div>
