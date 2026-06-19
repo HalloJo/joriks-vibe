@@ -75,6 +75,7 @@ export const brands = [
   "KLM",
   "ABN Amro",
   "Ocean Sewage Alliance",
+  "Tostibus",
   "ROKT",
   "iprox",
   "Gemeente Veenendaal",
@@ -84,11 +85,10 @@ export const brands = [
 
 export const projects = [
   {
-    name: "Buitenkanz",
-    description:
-      "Website & brand identity for a youth coaching foundation. Built with Next.js, TypeScript and Framer Motion.",
-    tags: ["Next.js", "TypeScript", "Framer Motion", "Identity"],
-    link: "https://buitenkanz.com",
+    name: "Palet",
+    description: "App to turn your idea into a brand identity — instantly.",
+    tags: ["TypeScript", "React", "Tailwind", "AI", "Vibe"],
+    link: "https://palet-sigma.vercel.app/",
   },
   {
     name: "Ocean Sewage Alliance",
