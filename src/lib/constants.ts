@@ -105,26 +105,3 @@ export const projects = [
     link: "https://torched-ashy.vercel.app/",
   },
 ];
-
-export const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/jorikvanruiswijk",
-    icon: "linkedin",
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/HalloJo",
-    icon: "github",
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/jorik.tsx",
-    icon: "instagram",
-  },
-  {
-    name: "Behance",
-    href: "https://www.behance.net/HiJorikVanRuiswijk",
-    icon: "behance",
-  },
-] as const;

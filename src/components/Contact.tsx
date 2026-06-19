@@ -1,29 +1,10 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Linkedin, Github, Instagram, Mail, Phone } from "lucide-react";
-import BehanceIcon from "./icons/BehanceIcon";
+import { Mail, Phone } from "lucide-react";
+import { socials } from "../lib/socials";
 
 export default function Contact() {
   const cardRef = useRef<HTMLDivElement>(null);
-
-  const socials = [
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/jorikvanruiswijk",
-      Icon: Linkedin,
-    },
-    { name: "GitHub", href: "https://github.com/HalloJo", Icon: Github },
-    {
-      name: "Instagram",
-      href: "https://instagram.com/jorik.tsx",
-      Icon: Instagram,
-    },
-    {
-      name: "Behance",
-      href: "https://www.behance.net/HiJorikVanRuiswijk",
-      Icon: BehanceIcon,
-    },
-  ] as const;
 
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);

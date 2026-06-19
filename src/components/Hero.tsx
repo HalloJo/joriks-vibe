@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Linkedin, Github, Instagram, ArrowDown } from "lucide-react";
-import BehanceIcon from "./icons/BehanceIcon";
+import { ArrowDown } from "lucide-react";
+import { socials } from "../lib/socials";
 
 const VIBE_CODED_AT = new Date("2026-06-19T10:05:06+02:00");
 
@@ -43,24 +43,6 @@ function useVibeAge() {
   return label;
 }
 
-const socials = [
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/jorikvanruiswijk",
-    Icon: Linkedin,
-  },
-  { name: "GitHub", href: "https://github.com/HalloJo", Icon: Github },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/jorik.tsx",
-    Icon: Instagram,
-  },
-  {
-    name: "Behance",
-    href: "https://www.behance.net/HiJorikVanRuiswijk",
-    Icon: BehanceIcon,
-  },
-] as const;
 
 const containerVariants = {
   hidden: {},
